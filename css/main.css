@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic);
+/*-- VARIABLES --*/
+/* Fonts */
+/* Colors */
+/*-- GENERAL --*/
+body {
+  margin: 0;
+  width: 100%;
+  min-width: 1000px;
+  font-family: "Source Sans Pro", sans-serif;
+  background: #0975BC; }
+
+h1 {
+  font-weight: 700;
+  font-size: 70px; }
+
+h2 {
+  font-weight: 700;
+  font-size: 38px; }
+
+/*-- HEADER --*/
+#header {
+  height: 125px;
+  background: rgba(255, 255, 255, 0.8); }
+  #header .logo {
+    background: url("../images/logo-fanosa.svg");
+    background-size: 100%;
+    width: 230px;
+    height: 48px; }
+
+/*# sourceMappingURL=main.css.map */
