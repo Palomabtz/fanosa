@@ -5,6 +5,7 @@ jQuery(document).ready(function(){
 	  $("#footer").load("footer.html"); 
 	});
 
+    // Sticky menu
 	$(window).scroll(function() {
 	if ($(this).scrollTop() > 50){  
 	    $('#header').addClass("sticky");
@@ -13,5 +14,18 @@ jQuery(document).ready(function(){
 	    $('#header').removeClass("sticky");
 	  }
 	});
+
+    // Burger menu mobile
+    function layoutHandler(){
+        if(window.innerWidth < 600){
+            jQuery('body').addClass("mobile");
+        } else {}
+    }
+    window.onresize = layoutHandler;
+    layoutHandler();
+
+    $('.burger-icon').click(function(){
+        $(".navegacion").fadeToggle(100);
+    });
 
 });

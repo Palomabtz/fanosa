@@ -1,31 +1,409 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic);
-/*-- VARIABLES --*/
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic);
+/* --- VARIABLES --- */
 /* Fonts */
 /* Colors */
-/*-- GENERAL --*/
+/* --- GENERAL --- */
 body {
   margin: 0;
   width: 100%;
   min-width: 1000px;
   font-family: "Source Sans Pro", sans-serif;
-  background: #0975BC; }
+  color: #696F75;
+  font-size: 14px; }
 
 h1 {
   font-weight: 700;
-  font-size: 70px; }
+  font-size: 70px;
+  margin: 0; }
 
 h2 {
   font-weight: 700;
-  font-size: 38px; }
+  font-size: 38px;
+  margin: 0; }
 
-/*-- HEADER --*/
-#header {
-  height: 125px;
-  background: rgba(255, 255, 255, 0.8); }
-  #header .logo {
+h3 {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0; }
+
+.wrapper,
+.text {
+  width: 1000px;
+  margin: 0 auto; }
+
+.half {
+  width: 50%;
+  display: inline-block;
+  margin-left: -2px; }
+  .half:nth-child(odd) {
+    width: calc(50% + 1px); }
+
+.quart {
+  width: 25%;
+  display: inline-block;
+  margin-left: -3px; }
+  .quart:last-child {
+    width: calc(25% + 3px); }
+
+/* --- HEADER --- */
+.header {
+  height: 110px;
+  background: rgba(255, 255, 255, 0.8);
+  width: 100%;
+  min-width: 1000px;
+  position: fixed;
+  top: 0;
+  z-index: 999; }
+  .sticky .header {
+    height: 65px; }
+  .header .wrapper {
+    padding-top: 30px; }
+    .sticky .header .wrapper {
+      padding-top: 17px; }
+  .header .logo {
     background: url("../images/logo-fanosa.svg");
     background-size: 100%;
     width: 230px;
-    height: 48px; }
+    height: 48px;
+    display: inline-block;
+    vertical-align: middle; }
+    .sticky .header .logo {
+      width: 160px;
+      height: 33px;
+      margin-right: 70px; }
+  .header .navegacion {
+    display: inline-block;
+    position: relative;
+    font-weight: 600;
+    width: 766px; }
+    .header .navegacion .menu {
+      display: inline-block;
+      width: 500px;
+      margin: 0 34px; }
+    .header .navegacion .language {
+      position: absolute;
+      top: -30px;
+      right: 0;
+      font-size: 12px; }
+      .sticky .header .navegacion .language {
+        top: 0; }
+    .header .navegacion .search {
+      display: inline-block; }
+      .sticky .header .navegacion .search {
+        display: none; }
+      .header .navegacion .search input {
+        width: 128px;
+        height: 16px;
+        margin: 0;
+        padding: 2px 5px;
+        line-height: 16px;
+        border: 1px solid #ABABAB;
+        background: #DEDEDE; }
+      .header .navegacion .search button {
+        width: 55px;
+        height: 22px;
+        color: #fff;
+        line-height: 20px;
+        background: #ED7F22;
+        border: 0;
+        padding: 0;
+        margin-left: -3px;
+        text-transform: uppercase; }
+  .header .menu a,
+  .header .language a {
+    line-height: 14px;
+    color: #696F75;
+    display: inline-block;
+    padding: 5px;
+    text-transform: uppercase;
+    text-decoration: none; }
+    .header .menu a:hover,
+    .header .language a:hover {
+      color: #ED7F22; }
+  .header .menu a {
+    font-size: 15px;
+    border-right: 1px solid #696F75;
+    padding: 5px 7px;
+    letter-spacing: -0.5px;
+    margin-left: -3px; }
+    .header .menu a:last-of-type {
+      border-right: 0; }
+
+/* --- FOOTER --- */
+#footer {
+  background: #2A66B1;
+  padding: 30px 0 20px; }
+
+.footer {
+  color: #fff;
+  width: 1000px;
+  margin: 0 auto; }
+  .footer .logo {
+    background: url("../images/logo-fanosa-footer.svg");
+    background-size: 100%;
+    width: 150px;
+    height: 31px;
+    float: left; }
+  .footer .menu,
+  .footer .menu-bottom {
+    width: 470px;
+    font-size: 12px;
+    margin: 10px 0 10px 250px; }
+    .footer .menu a,
+    .footer .menu-bottom a {
+      text-transform: uppercase;
+      margin-right: 10px;
+      color: #fff;
+      text-decoration: none; }
+  .footer .menu a {
+    font-weight: 700; }
+  .footer .menu-bottom span {
+    display: block;
+    margin-top: 5px; }
+  .footer .social {
+    float: right; }
+    .footer .social .fb,
+    .footer .social .lin {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background-repeat: no-repeat;
+      background-position: center;
+      overflow: hidden;
+      text-indent: 30px;
+      margin-left: 10px; }
+    .footer .social .fb {
+      background-image: url("../images/icon-facebook.svg"); }
+    .footer .social .lin {
+      background-image: url("../images/icon-linkedin.svg"); }
+
+/* --- HOME --- */
+#home .welcome {
+  height: calc(100vh - 150px);
+  min-height: 650px;
+  background-image: url("../images/home-welcome.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  padding-top: 150px; }
+  #home .welcome h1 {
+    display: block;
+    color: #2A66B1; }
+  #home .welcome p {
+    width: 35%; }
+#home .boletin {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 65px;
+  background-color: rgba(105, 111, 117, 0.2);
+  color: #fff;
+  padding: 15px;
+  width: calc(50% - 29px); }
+  #home .boletin h2 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff; }
+  #home .boletin p {
+    width: 380px;
+    display: inline-block;
+    margin: 0 0 5px 160px; }
+    #home .boletin p input {
+      width: 228px;
+      height: 16px;
+      margin: 0;
+      padding: 2px 5px;
+      line-height: 16px;
+      border: 1px solid #ABABAB;
+      background: #DEDEDE;
+      position: initial;
+      color: #696F75; }
+    #home .boletin p button {
+      width: 75px;
+      height: 22px;
+      color: #fff;
+      line-height: 20px;
+      background: #ED7F22;
+      border: 0;
+      padding: 0;
+      margin-left: -3px;
+      font-size: 12px; }
+#home .secciones .half {
+  height: 180px;
+  padding: 30px 50px;
+  width: calc(50% - 200px);
+  vertical-align: top; }
+  #home .secciones .half:nth-child(odd) {
+    width: calc(50% - 199px); }
+  #home .secciones .half p:before {
+    content: '';
+    float: left;
+    margin-right: 10px;
+    width: 111px;
+    height: 97px;
+    background-repeat: no-repeat;
+    background-position: center; }
+  #home .secciones .half a {
+    text-decoration: underline;
+    font-style: italic; }
+#home .secciones .obra {
+  background: #ABABAB;
+  padding-left: 150px;
+  color: #2A66B1; }
+  #home .secciones .obra p:before {
+    background-image: url("../images/home-obra.svg"); }
+#home .secciones .ahorro {
+  background: #DEDEDE;
+  padding-right: 150px;
+  color: #2A66B1; }
+  #home .secciones .ahorro p:before {
+    background-image: url("../images/home-ahorro.svg"); }
+#home .secciones .sisevive {
+  background: #696F75;
+  padding-left: 150px;
+  color: #fff; }
+  #home .secciones .sisevive p:before {
+    background-image: url("../images/home-sisevive.svg"); }
+#home .secciones .asesoria {
+  background: #ED7F22;
+  padding-right: 150px;
+  color: #fff; }
+  #home .secciones .asesoria p:before {
+    background-image: url("../images/home-asesoria.svg"); }
+#home .secciones .obra a,
+#home .secciones .ahorro a {
+  color: #2A66B1; }
+#home .secciones .sisevive a,
+#home .secciones .asesoria a {
+  color: #fff; }
+#home .secciones .link {
+  display: block;
+  text-align: right;
+  margin: 10px 0; }
+#home .secciones .obrapdtos {
+  width: 290px;
+  display: block;
+  float: right;
+  margin-top: -10px; }
+  #home .secciones .obrapdtos a {
+    display: inline-block;
+    padding: 3px 10px;
+    min-width: 80px;
+    font-size: 17px;
+    text-decoration: none; }
+    #home .secciones .obrapdtos a:first-child, #home .secciones .obrapdtos a:nth-child(2) {
+      border-bottom: 1px solid #2A66B1; }
+    #home .secciones .obrapdtos a:nth-child(odd) {
+      margin-right: 10px; }
+#home .sistemas {
+  background: url("../images/home-sistemas.jpg") center;
+  background-size: cover;
+  height: 525px;
+  position: relative; }
+  #home .sistemas .text {
+    width: 365px;
+    position: absolute;
+    bottom: 80px;
+    right: 100px; }
+    #home .sistemas .text h1 {
+      margin-left: -30px;
+      color: #2A66B1;
+      line-height: 60px; }
+    #home .sistemas .text .link {
+      display: block;
+      text-align: right;
+      margin: 10px 0; }
+      #home .sistemas .text .link a {
+        color: #ED7F22;
+        text-decoration: underline;
+        font-style: italic; }
+#home .pdtos .quart {
+  height: 285px;
+  width: calc(25% - 80px);
+  padding: 20px 40px;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  vertical-align: top; }
+  #home .pdtos .quart:last-child {
+    width: calc(25% - 77px); }
+  #home .pdtos .quart:before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; }
+  #home .pdtos .quart:nth-child(1):before {
+    background-image: url("../images/sistemas-insulpanel-orange.jpg"); }
+  #home .pdtos .quart:nth-child(2):before {
+    background-image: url("../images/sistemas-steelfoam-blue.jpg"); }
+  #home .pdtos .quart:nth-child(3):before {
+    background-image: url("../images/sistemas-construpanel-orange.jpg"); }
+  #home .pdtos .quart:nth-child(4):before {
+    background-image: url("../images/sistemas-geofoam-blue.jpg"); }
+  #home .pdtos .quart:nth-child(odd) {
+    background: #ED7F22; }
+  #home .pdtos .quart:nth-child(even) {
+    background: #2A66B1; }
+#home .imgbottom {
+  background: url("../images/home-bottom.jpg") center bottom;
+  background-size: cover;
+  height: 470px; }
+#home .contacto {
+  padding-bottom: 30px; }
+  #home .contacto h2 {
+    color: #2A66B1;
+    margin: 30px 0; }
+  #home .contacto .right-col {
+    font-style: italic;
+    color: #2A66B1;
+    width: 230px;
+    display: inline-block;
+    vertical-align: top; }
+    #home .contacto .right-col h3 {
+      color: #696F75; }
+    #home .contacto .right-col a {
+      font-size: 24px;
+      font-weight: 600;
+      text-decoration: underline;
+      color: #ED7F22;
+      font-style: normal; }
+  #home .contacto .forma {
+    display: inline-block;
+    margin-left: 60px;
+    position: relative; }
+    #home .contacto .forma input,
+    #home .contacto .forma textarea {
+      line-height: 16px;
+      height: 16px;
+      background: #DEDEDE;
+      padding: 5px;
+      border: 0;
+      display: block;
+      width: 650px;
+      margin: 0 0 5px; }
+      #home .contacto .forma input.emailedo,
+      #home .contacto .forma textarea.emailedo {
+        width: 317px;
+        margin-right: 3px;
+        display: inline-block; }
+    #home .contacto .forma textarea {
+      height: 100px;
+      padding-bottom: 25px; }
+    #home .contacto .forma button {
+      width: 65px;
+      height: 22px;
+      color: #fff;
+      line-height: 20px;
+      background: #ED7F22;
+      border: 0;
+      padding: 0;
+      font-size: 12px;
+      position: absolute;
+      bottom: 5px;
+      right: 3px; }
 
 /*# sourceMappingURL=main.css.map */

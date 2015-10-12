@@ -1,47 +1,598 @@
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,400italic);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,600italic);
 
-/*-- VARIABLES --*/
+/* --- VARIABLES --- */
 /* Fonts */
 $source: 'Source Sans Pro', sans-serif;
 
 /* Colors */
-$grey-light: #DEDEDE;
-$grey: #ABABAB;
-$grey-dark: #696F75;
+$grey-light02: #DEDEDE;
+$grey-light: #ABABAB;
+$grey: #696F75;
 $orange: #ED7F22;
-$blue: #0975BC;
+$blue: #2A66B1;
+$white: #fff;
 
 
-/*-- GENERAL --*/
+/* --- GENERAL --- */
 
 body {
 	margin: 0;
 	width: 100%;
 	min-width: 1000px;
 	font-family: $source;
-	background: $blue;
+	color: $grey;
+	font-size: 14px;
 }
 
 h1 {
 	font-weight: 700;
 	font-size: 70px;
+	margin: 0;
 }
 
 h2 {
 	font-weight: 700;
 	font-size: 38px;
+	margin: 0;
 }
 
-/*-- HEADER --*/
+h3 {
+	font-weight: 600;
+	font-size: 24px;
+	margin: 0;
+}
 
-#header {
-	height: 125px;
+.wrapper,
+.text {
+	width: 1000px;
+	margin: 0 auto;
+}
+
+.half {
+	width: 50%;
+	display: inline-block;
+	margin-left: -2px;
+
+	&:nth-child(odd) {
+		width: calc(50% + 1px);
+	}
+}
+
+.quart {
+	width: 25%;
+	display: inline-block;
+	margin-left: -3px;
+
+	&:last-child {
+		width: calc(25% + 3px);
+	}
+}
+
+
+/* --- HEADER --- */
+
+.header {
+	height: 110px;
 	background: rgba(255, 255, 255, 0.8);
+	width: 100%;
+	min-width: 1000px;
+	position: fixed;
+	top: 0;
+	z-index: 999;
+
+	.sticky & {
+		height: 65px;
+	}
+
+	.wrapper {
+		padding-top: 30px;
+
+		.sticky & {
+			padding-top: 17px;
+		}
+	}
 
 	.logo {
 		background: url('../images/logo-fanosa.svg');
 		background-size: 100%;
 		width: 230px;
 		height: 48px;
+		display: inline-block;
+		vertical-align: middle;
+
+		.sticky & {
+			width: 160px;
+			height: 33px;
+			margin-right: 70px;
+		}
+	}
+
+	.navegacion {
+		display: inline-block;
+		position: relative;
+		font-weight: 600;
+		width: 766px;
+
+		.menu {
+			display: inline-block;
+			width: 500px;
+			margin: 0 34px;
+		}
+
+		.language {
+			position: absolute;
+			top: -30px;
+			right: 0;
+			font-size: 12px;
+
+			.sticky & {
+				top: 0;
+			}
+		}
+
+		.search {
+			display: inline-block;
+
+			.sticky & {
+				display: none;
+			}
+
+			input {
+				width: 128px;
+				height: 16px;
+				margin: 0;
+				padding: 2px 5px;
+				line-height: 16px;
+				border: 1px solid $grey-light;
+				background: $grey-light02;
+			}
+
+			button {
+				width: 55px;
+				height: 22px;
+				color: $white;
+				line-height: 20px;
+				background: $orange;
+				border: 0;
+				padding: 0;
+				margin-left: -3px;
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.menu a,
+	.language a {
+		line-height: 14px;
+		color: $grey;
+		display: inline-block;
+		padding: 5px;
+		text-transform: uppercase;
+		text-decoration: none;
+
+		&:hover {
+			color: $orange;
+		}
+	}
+
+	.menu a {
+		font-size: 15px;
+		border-right: 1px solid $grey;
+		padding: 5px 7px;
+		letter-spacing: -0.5px;
+		margin-left: -3px;
+
+		&:last-of-type {
+			border-right:0;
+		}
+	}
+}
+
+
+/* --- FOOTER --- */
+
+#footer {
+	background: $blue;
+	padding: 30px 0 20px;
+}
+
+.footer {
+	color: $white;
+	width: 1000px;
+	margin: 0 auto;
+
+	.logo {
+		background: url('../images/logo-fanosa-footer.svg');
+		background-size: 100%;
+		width: 150px;
+		height: 31px;
+		float: left;
+	}
+
+	.menu,
+	.menu-bottom {
+		width: 470px;
+		font-size: 12px;
+		margin: 10px 0 10px 250px;
+
+		a {
+			text-transform: uppercase;
+			margin-right: 10px;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+
+	.menu a {
+		font-weight: 700;		
+	}
+
+	.menu-bottom span {
+		display: block;
+		margin-top: 5px;
+	}
+
+	.social {
+		float: right;
+
+		.fb,
+		.lin {
+			display: inline-block;
+			width: 28px;
+			height: 28px;
+			background-repeat: no-repeat;
+			background-position: center;
+			overflow: hidden;
+			text-indent: 30px;
+			margin-left: 10px;
+		}
+
+		.fb {
+			background-image: url('../images/icon-facebook.svg');
+		}
+
+		.lin {
+			background-image: url('../images/icon-linkedin.svg');
+		}
+	}
+
+}
+
+
+/* --- HOME --- */
+
+#home {
+	.welcome {
+		height: calc(100vh - 150px);
+		min-height: 650px;
+		background-image: url('../images/home-welcome.jpg');
+		background-size: cover;
+		background-position: center bottom;
+		position: relative;
+		padding-top: 150px;
+
+		h1 {
+			display: block;
+			color: $blue;
+		}
+
+		p {
+			width: 35%;
+		}
+	}
+
+	.boletin {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: 65px;
+		background-color: rgba(105,111,117, 0.2);
+		color: $white;
+		padding: 15px;
+		width: calc(50% - 29px);
+
+		h2 {
+			position: absolute;
+			bottom: 20px;
+			left: 20px;
+			color: $white;
+		}
+
+		p {
+			width: 380px;
+			display: inline-block;
+			margin: 0 0 5px 160px;
+
+			input {
+				width: 228px;
+				height: 16px;
+				margin: 0;
+				padding: 2px 5px;
+				line-height: 16px;
+				border: 1px solid $grey-light;
+				background: $grey-light02;
+				position: initial;
+				color: $grey;
+			}
+
+			button {
+				width: 75px;
+				height: 22px;
+				color: $white;
+				line-height: 20px;
+				background: $orange;
+				border: 0;
+				padding: 0;
+				margin-left: -3px;
+				font-size: 12px;
+			}
+		}
+	}
+
+	.secciones {
+		.half {
+			height: 180px;
+			padding: 30px 50px;
+			width: calc(50% - 200px);
+			vertical-align: top;
+
+			&:nth-child(odd) {
+				width: calc(50% - 199px);
+			}
+
+			p:before {
+				content: '';
+				float: left;
+				margin-right: 10px;
+				width: 111px;
+				height: 97px;
+				background-repeat: no-repeat;
+				background-position: center;
+			}
+
+			a {
+				text-decoration: underline;
+				font-style: italic;
+			}
+		}
+
+		.obra {
+			background: $grey-light;
+			padding-left: 150px;
+			color: $blue;
+
+			p:before {
+				background-image: url('../images/home-obra.svg');
+			}
+		}
+
+		.ahorro {
+			background: $grey-light02;
+			padding-right: 150px;
+			color: $blue;
+
+			p:before {
+				background-image: url('../images/home-ahorro.svg');
+			}
+		}
+
+		.sisevive {
+			background: $grey;
+			padding-left: 150px;
+			color: $white;
+
+			p:before {
+				background-image: url('../images/home-sisevive.svg');
+			}
+		}
+
+		.asesoria {
+			background: $orange;
+			padding-right: 150px;
+			color: $white;
+
+			p:before {
+				background-image: url('../images/home-asesoria.svg');
+			}
+		}
+
+		.obra a,
+		.ahorro a {
+			color: $blue;
+		}
+		.sisevive a,
+		.asesoria a {
+			color: $white;
+		}
+
+		.link {
+			display: block;
+			text-align: right;
+			margin: 10px 0;
+		}
+
+		.obrapdtos {
+			width: 290px;
+			display: block;
+			float: right;
+			margin-top: -10px;
+
+			a {
+				display: inline-block;
+				padding: 3px 10px;
+				min-width: 80px;
+				font-size: 17px;
+			    text-decoration: none;
+
+			    &:first-child,
+			    &:nth-child(2) {
+			    	border-bottom: 1px solid $blue;
+			    }
+
+			    &:nth-child(odd) {
+			    	margin-right: 10px;
+			    }
+			}
+		}
+	}
+
+	.sistemas {
+		background: url('../images/home-sistemas.jpg') center;
+		background-size: cover;
+		height: 525px;
+		position: relative;
+
+		.text {
+			width: 365px;
+			position: absolute;
+			bottom: 80px;
+			right: 100px;
+
+			h1 {
+				margin-left: -30px;
+				color: $blue;
+				line-height: 60px;
+			}
+
+			.link {
+				display: block;
+				text-align: right;
+				margin: 10px 0;
+
+				a {
+					color: $orange;
+					text-decoration: underline;
+					font-style: italic;
+				}
+			}
+		}
+	}
+
+	.pdtos {
+		.quart {
+			height: 285px;
+			width: calc(25% - 80px);
+			padding: 20px 40px;
+			text-decoration: none;
+			color: $white;
+			text-align: center;
+			vertical-align: top;
+
+			&:last-child {
+				width: calc(25% - 77px);
+			}
+
+			&:before {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 150px;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: contain;
+			}
+
+			&:nth-child(1):before {
+				background-image: url('../images/sistemas-insulpanel-orange.jpg');
+			}
+
+			&:nth-child(2):before {
+				background-image: url('../images/sistemas-steelfoam-blue.jpg');
+			}
+
+			&:nth-child(3):before {
+				background-image: url('../images/sistemas-construpanel-orange.jpg');
+			}
+
+			&:nth-child(4):before {
+				background-image: url('../images/sistemas-geofoam-blue.jpg');
+			}
+
+			&:nth-child(odd) {
+				background: $orange;
+			}
+
+			&:nth-child(even) {
+				background: $blue;
+			}
+		}
+	}
+
+	.imgbottom {
+		background: url('../images/home-bottom.jpg') center bottom;
+		background-size: cover;
+		height: 470px;
+	}
+
+	.contacto {
+		padding-bottom: 30px;
+
+		h2 {
+			color: $blue;
+			margin: 30px 0;
+		}
+
+		.right-col {
+			font-style: italic;
+			color: $blue;
+			width: 230px;
+			display: inline-block;
+			vertical-align: top;
+
+			h3 {
+				color: $grey;
+			}
+
+			a {
+				font-size: 24px;
+				font-weight: 600;
+				text-decoration: underline;
+				color: $orange;
+				font-style: normal;
+			}
+		}
+
+		.forma {
+			display: inline-block;
+			margin-left: 60px;
+			position: relative;
+
+			input,
+			textarea {
+				line-height: 16px;
+				height: 16px;
+				background: $grey-light02;
+				padding: 5px;
+				border: 0;
+				display: block;
+				width: 650px;
+				margin: 0 0 5px;
+
+				&.emailedo {
+					width: 317px;
+					margin-right: 3px;
+					display: inline-block;
+				}
+			}
+
+			textarea {
+				height: 100px;
+				padding-bottom: 25px;
+			}
+
+			button {
+				width: 65px;
+				height: 22px;
+				color: $white;
+				line-height: 20px;
+				background: $orange;
+				border: 0;
+				padding: 0;
+				font-size: 12px;
+				position: absolute;
+				bottom: 5px;
+				right: 3px;
+			}
+		}
 	}
 }
