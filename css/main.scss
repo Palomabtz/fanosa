@@ -46,26 +46,19 @@ h3 {
 .text {
 	width: 1000px;
 	margin: 0 auto;
+
 }
 
 .half {
 	width: 50%;
 	display: inline-block;
-	margin-left: -2px;
-
-	&:nth-child(odd) {
-		width: calc(50% + 1px);
-	}
+	float: left;
 }
 
 .quart {
 	width: 25%;
 	display: inline-block;
-	margin-left: -3px;
-
-	&:last-child {
-		width: calc(25% + 3px);
-	}
+	float: left;
 }
 
 
@@ -86,6 +79,7 @@ h3 {
 
 	.wrapper {
 		padding-top: 30px;
+		position: relative;
 
 		.sticky & {
 			padding-top: 17px;
@@ -107,6 +101,17 @@ h3 {
 		}
 	}
 
+	.language {
+		position: absolute;
+		top: 10px;
+		right: 0;
+		font-size: 12px;
+
+		.sticky & {
+			top: 20px;
+		}
+	}
+
 	.navegacion {
 		display: inline-block;
 		position: relative;
@@ -117,17 +122,6 @@ h3 {
 			display: inline-block;
 			width: 500px;
 			margin: 0 34px;
-		}
-
-		.language {
-			position: absolute;
-			top: -30px;
-			right: 0;
-			font-size: 12px;
-
-			.sticky & {
-				top: 0;
-			}
 		}
 
 		.search {
@@ -330,15 +324,15 @@ h3 {
 	}
 
 	.secciones {
+		display: block;
+		height: 480px;
+		width: 100%;
+
 		.half {
 			height: 180px;
 			padding: 30px 50px;
 			width: calc(50% - 200px);
 			vertical-align: top;
-
-			&:nth-child(odd) {
-				width: calc(50% - 199px);
-			}
 
 			p:before {
 				content: '';
@@ -469,6 +463,10 @@ h3 {
 	}
 
 	.pdtos {
+		display: block;
+		height: 325px;
+		width: 100%;
+
 		.quart {
 			height: 285px;
 			width: calc(25% - 80px);
@@ -477,10 +475,6 @@ h3 {
 			color: $white;
 			text-align: center;
 			vertical-align: top;
-
-			&:last-child {
-				width: calc(25% - 77px);
-			}
 
 			&:before {
 				content: '';

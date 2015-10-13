@@ -1,0 +1,179 @@
+/* --- GENERAL --- */
+
+body {
+	margin: 0;
+	width: 100%;
+	max-width: 700px;
+	min-width: 100%
+}
+
+h1 {
+	font-size: 50px;
+}
+
+h2 {
+	font-size: 28px;
+}
+
+h3 {
+}
+
+.wrapper,
+.text {
+	width: calc(100% - 20px);
+	max-width: 700px;
+	margin: 0 10px;
+}
+
+.half {
+}
+
+.quart {
+	width: 50%;
+}
+
+
+/* --- HEADER --- */
+
+.header {
+	height: 65px;
+	min-width: 100%;
+
+	.wrapper {
+	}
+
+	.logo {
+		width: 160px;
+		height: 33px;
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.language {
+		top: 20px;
+	}
+
+	.navegacion {
+		background: red;
+		width: 200px;
+		display: none;
+
+		.menu {
+			width: 100%;
+		}
+
+		.search {
+			display: block !important;
+
+			input {
+			}
+
+			button {
+			}
+		}
+	}
+
+	.menu a,
+	.language a {
+	}
+
+	.menu a {
+	}
+}
+
+
+
+/* --- FOOTER --- */
+
+.footer {
+	width: 100%;
+
+	.logo {
+		display: none;
+	}
+
+	.menu,
+	.menu-bottom {
+		width: 100%;
+		margin: 10px auto;
+	}
+
+	.menu a {
+	}
+
+	.menu-bottom span {
+	}
+
+	.social {
+		float: none;
+		margin: 0 auto;
+	}
+}
+
+
+/* --- HOME --- */
+
+#home {
+	.boletin {
+		width: calc(100% - 30px);
+		height: 100px;
+		float: none;
+
+		p {
+			width: calc(100% - 150px);
+			margin-left: 150px;
+
+			input {
+				width: 100px;
+			}
+		}
+	}
+
+	.secciones {
+		.half {
+			width: calc(50% - 100px);
+		}
+
+		.asesoria,
+		.sisevive,
+		.ahorro,
+		.obra {
+			padding: 30px 50px;
+		}
+	}
+
+	.pdtos {
+		.quart {
+			width: calc(50% - 80px);
+		}
+	}
+
+	.contacto {
+		.right-col {
+			display: block;
+			width: 90%;
+		}
+
+		.forma {
+			display: block;
+			margin-left: 0;
+			position: relative;
+
+			input,
+			textarea {
+				width: calc(100% - 10px);
+
+				&.emailedo {
+					width: calc(50% - 15px);
+				}
+			}
+
+			button {
+				width: 65px;
+				bottom: 0;
+				right: 0;
+			}
+		}
+	}
+}

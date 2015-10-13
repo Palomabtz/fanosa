@@ -17,7 +17,7 @@ jQuery(document).ready(function(){
 
     // Burger menu mobile
     function layoutHandler(){
-        if(window.innerWidth < 600){
+        if(window.innerWidth < 700){
             jQuery('body').addClass("mobile");
         } else {}
     }

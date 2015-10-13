@@ -1,0 +1,94 @@
+/* --- GENERAL --- */
+body {
+  margin: 0;
+  width: 100%;
+  max-width: 700px;
+  min-width: 100%; }
+
+h1 {
+  font-size: 50px; }
+
+h2 {
+  font-size: 28px; }
+
+.wrapper,
+.text {
+  width: calc(100% - 20px);
+  max-width: 700px;
+  margin: 0 10px; }
+
+.quart {
+  width: 50%; }
+
+/* --- HEADER --- */
+.header {
+  height: 65px;
+  min-width: 100%; }
+  .header .logo {
+    width: 160px;
+    height: 33px;
+    position: absolute;
+    top: 0;
+    left: 0; }
+  .header .language {
+    top: 20px; }
+  .header .navegacion {
+    background: red;
+    width: 200px;
+    display: none; }
+    .header .navegacion .menu {
+      width: 100%; }
+    .header .navegacion .search {
+      display: block !important; }
+
+/* --- FOOTER --- */
+.footer {
+  width: 100%; }
+  .footer .logo {
+    display: none; }
+  .footer .menu,
+  .footer .menu-bottom {
+    width: 100%;
+    margin: 10px auto; }
+  .footer .social {
+    float: none;
+    margin: 0 auto; }
+
+/* --- HOME --- */
+#home .boletin {
+  width: calc(100% - 30px);
+  height: 100px;
+  float: none; }
+  #home .boletin p {
+    width: calc(100% - 150px);
+    margin-left: 150px; }
+    #home .boletin p input {
+      width: 100px; }
+#home .secciones .half {
+  width: calc(50% - 100px); }
+#home .secciones .asesoria,
+#home .secciones .sisevive,
+#home .secciones .ahorro,
+#home .secciones .obra {
+  padding: 30px 50px; }
+#home .pdtos .quart {
+  width: calc(50% - 80px); }
+#home .contacto .right-col {
+  display: block;
+  width: 90%; }
+#home .contacto .forma {
+  display: block;
+  margin-left: 0;
+  position: relative; }
+  #home .contacto .forma input,
+  #home .contacto .forma textarea {
+    width: calc(100% - 10px); }
+    #home .contacto .forma input.emailedo,
+    #home .contacto .forma textarea.emailedo {
+      width: calc(50% - 15px); }
+  #home .contacto .forma button {
+    width: 65px;
+    bottom: 0;
+    right: 0; }
+
+/*# sourceMappingURL=mobile.css.map */
